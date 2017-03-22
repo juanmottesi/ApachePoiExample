@@ -24,12 +24,37 @@ public abstract class ExcelRecord {
 				pattern));
 		return cellStyle;
 	}
-	
-	public void setCellValue(Cell cell, Double number){
-		if (number == null){
-			cell.setCellValue(0);
-		} else{
+
+	public void setCellValue(Cell cell, Double number) {
+		if (number == null) {
+			cell.setCellValue("");
+		} else {
 			cell.setCellValue(number);
+		}
+	}
+
+	public void setCellValue(Cell cell, Integer number) {
+		if (number == null) {
+			cell.setCellValue("");
+		} else {
+			cell.setCellValue(number);
+		}
+	}
+
+	public void setCellValue(Cell cell, String text) {
+		if (text == null) {
+			cell.setCellValue("");
+		} else {
+			cell.setCellValue(text);
+		}
+	}
+
+	public void setCellValue(Cell cell, LocalDate date, String pattern) {
+		if (date == null) {
+			cell.setCellValue("");
+		} else {
+			cell.setCellValue(DateUtils.asDate(date));
+			cell.setCellStyle(this.getDateStyle(pattern));
 		}
 	}
 

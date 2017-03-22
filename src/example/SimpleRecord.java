@@ -52,7 +52,7 @@ public class SimpleRecord extends ExcelRecord {
 		cell.setCellValue(this.date);
 		cell.setCellStyle(this.getDateStyle("yyyy-mm-dd"));
 		cell = row.createCell(colNum++);
-		cell.setCellValue(this.number);
+		this.setCellValue(cell, this.number);
 	}
 
 }

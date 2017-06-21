@@ -45,7 +45,7 @@ public class SimpleRecord extends ExcelRecord {
 	}
 
 	public void getRow(Row row) {
-		Integer colNum = 0;
+		int colNum = 0;
 		Cell cell = row.createCell(colNum++);
 		cell.setCellValue(this.name);
 		cell = row.createCell(colNum++);

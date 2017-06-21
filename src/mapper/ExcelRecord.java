@@ -5,6 +5,7 @@ import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.CreationHelper;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import java.time.LocalDate;
 
 public abstract class ExcelRecord {
 
@@ -29,7 +30,7 @@ public abstract class ExcelRecord {
 		if (number == null) {
 			cell.setCellValue("");
 		} else {
-			cell.setCellValue(number);
+			cell.setCellValue(number.doubleValue());
 		}
 	}
 
@@ -37,7 +38,7 @@ public abstract class ExcelRecord {
 		if (number == null) {
 			cell.setCellValue("");
 		} else {
-			cell.setCellValue(number);
+			cell.setCellValue(number.intValue());
 		}
 	}
 
